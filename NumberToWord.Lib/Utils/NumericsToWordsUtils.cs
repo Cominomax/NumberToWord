@@ -36,7 +36,7 @@ namespace NumberToWord.Lib.Utils
         {
             if (numberOfZeros > 0)
             {
-                sb.Append($" {WordConstants.PowersOf10[numberOfZeros]}");
+                sb.Append($" {WordConstants.Instance.PowersOf10[numberOfZeros]}");
             }
         }
 
@@ -45,7 +45,7 @@ namespace NumberToWord.Lib.Utils
             int hundredth = remainder / 100;
             if (hundredth > 0)
             {
-                sb.Append($" {WordConstants.UnderTwenty[hundredth]} hundred");
+                sb.Append($" {WordConstants.Instance.UnderTwenty[hundredth]} hundred");
             }
         }
 
@@ -56,12 +56,12 @@ namespace NumberToWord.Lib.Utils
             {
                 if (tenths < 20)
                 {
-                    sb.Append($" and {WordConstants.UnderTwenty[tenths]}");
+                    sb.Append($" and {WordConstants.Instance.UnderTwenty[tenths]}");
                 }
                 else
                 {
                     var units = tenths % 10;
-                    sb.Append($" and {WordConstants.AboveTwenty[tenths - units]} {WordConstants.UnderTwenty[units]}");
+                    sb.Append($" and {WordConstants.Instance.AboveTwenty[tenths - units]} {WordConstants.Instance.UnderTwenty[units]}");
                 }
             }
         }

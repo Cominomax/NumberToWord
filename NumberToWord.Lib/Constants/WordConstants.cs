@@ -2,13 +2,24 @@ using System.Collections.Generic;
 
 namespace NumberToWord.Lib.Constants
 {
-    internal static class WordConstants
+    internal class WordConstants
     {
-        internal static Dictionary<int, string> PowersOf10 { get; set; }
-        internal static Dictionary<int, string> UnderTwenty { get; set; }
-        internal static Dictionary<int, string> AboveTwenty { get; set; }
 
-        static WordConstants()
+        private static WordConstants _instance;
+
+        internal static WordConstants Instance
+        {
+            get 
+            {
+                if (_instance == null)
+                {
+                    _instance = new WordConstants();
+                }
+                return _instance; 
+            }
+        }
+
+        private WordConstants()
         {
             PowersOf10 = new Dictionary<int, string>();
             PowersOf10.Add(0, string.Empty);
@@ -55,5 +66,10 @@ namespace NumberToWord.Lib.Constants
             AboveTwenty.Add(80, "eighty");
             AboveTwenty.Add(90, "ninety");
         }
+
+        internal Dictionary<int, string> PowersOf10 { get; set; }
+        internal Dictionary<int, string> UnderTwenty { get; set; }
+        internal Dictionary<int, string> AboveTwenty { get; set; }
+
     }
 }
