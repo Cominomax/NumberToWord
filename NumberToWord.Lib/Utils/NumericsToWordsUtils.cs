@@ -6,6 +6,23 @@ namespace NumberToWord.Lib.Utils
 {
     public class NumericsToWordsUtils
     {
+        private static NumericsToWordsUtils _instance;
+
+        private NumericsToWordsUtils() { }
+
+        internal static NumericsToWordsUtils Instance
+        {
+            get 
+            {
+                if (_instance == null)
+                {
+                    _instance = new NumericsToWordsUtils();
+                }
+                return _instance;
+            }
+        }
+
+
         internal string ConvertHundredth(int numberOfZeros, int hundredthToConvert)
         {
             var sb = new StringBuilder();
