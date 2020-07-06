@@ -3,6 +3,10 @@
   <PropertyGroup>
     <OutputType>library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Maxime Cominotto</Authors>
+    <Company>None</Company>
+    <Description>Standard library to transform an integer into a correct English string.</Description>
   </PropertyGroup>
 
 </Project>
